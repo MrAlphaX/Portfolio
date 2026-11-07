@@ -102,7 +102,7 @@ export const projects: Project[] = [
     id: 'stock-ageing-dashboard',
     title: 'Stock Ageing Dashboard',
     genre: 'Inventory • Dashboard',
-    logline: 'A finished goods stock ageing dashboard for Qarshi, with division-based stock, batch, grading and expiry control.',
+    logline: 'A finished goods stock ageing dashboard with division-based stock, batch, grading and expiry control.',
     stack: [],
     build: [],
     features: [
@@ -144,7 +144,7 @@ export const projects: Project[] = [
     id: 'qr-code-plant-nursery',
     title: 'QR Code and Plant Nursery',
     genre: 'QR Code • Plant Nursery',
-    logline: 'A plant nursery system for Qarshi Botanical Garden & Nursery, with a QR code for every plant plus sales, purchase, supplier and stock management.',
+    logline: 'A plant nursery system with a QR code for every plant plus sales, purchase, supplier and stock management.',
     stack: [],
     build: [],
     features: [
@@ -395,16 +395,16 @@ export const seasons: Season[] = [
       {
         code: 'S04 E01',
         title: 'Stock Ageing Dashboard',
-        description: 'A finished goods stock ageing dashboard for Qarshi, with division-based stock, batch, grading and expiry control.',
-        tags: ['Dashboard', 'Inventory', 'Qarshi'],
+        description: 'A finished goods stock ageing dashboard with division-based stock, batch, grading and expiry control.',
+        tags: ['Dashboard', 'Inventory'],
         runtime: 'Original',
         palette: amber,
       },
       {
         code: 'S04 E02',
         title: 'QR Code and Plant Nursery',
-        description: 'A plant nursery system for Qarshi Botanical Garden & Nursery, with a QR code for every plant plus sales, purchase, supplier and stock management.',
-        tags: ['QR Code', 'Plant Nursery', 'Qarshi'],
+        description: 'A plant nursery system with a QR code for every plant plus sales, purchase, supplier and stock management.',
+        tags: ['QR Code', 'Plant Nursery'],
         runtime: 'Original',
         palette: jade,
       },
@@ -448,7 +448,7 @@ export type TopPick = { label: string; title: string; detail: string; palette: P
 
 export const topPicks: TopPick[] = [
   { label: 'Primary stack', title: 'PHP Frameworks', detail: 'with JavaScript, Angular and React', palette: amber },
-  { label: 'The Originals', title: 'Stock Ageing Dashboard', detail: 'Finished goods stock for Qarshi', palette: crimson },
+  { label: 'The Originals', title: 'Stock Ageing Dashboard', detail: 'Finished goods stock control', palette: crimson },
   { label: 'The Originals', title: 'QR Code and Plant Nursery', detail: 'A QR code for every plant', palette: jade },
   { label: 'The Originals', title: 'Plants Treatment System', detail: 'Managing plant treatments', palette: ocean },
   { label: 'AI', title: 'AI Prompts', detail: 'and AI Automations', palette: violet },
