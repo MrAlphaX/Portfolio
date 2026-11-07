@@ -22,7 +22,7 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
         <div className="lg:sticky lg:top-28 lg:self-start">
           <p className="font-serif text-3xl italic leading-tight text-bone">Every episode, on one page.</p>
           <p className="mt-3 text-sm leading-relaxed text-mist">
-            Education, training, projects, achievements and {certifications.length} certifications — view it here or take a copy with you.
+            Education, training, projects and achievements — view it here or take a copy with you.
           </p>
           <div className="mt-6 flex flex-col gap-3">
             <Magnetic className="w-full">
@@ -50,7 +50,7 @@ export default function ResumeSection({ onView }: { onView: () => void }) {
             {[
               { v: education[0].score.replace('CGPA ', ''), k: 'CGPA' },
               { v: String(projects.length), k: 'Originals' },
-              { v: String(certifications.length), k: 'Certs' },
+              { v: String(skillCategories.reduce((n, c) => n + c.skills.length, 0)), k: 'Skills' },
             ].map((s) => (
               <div key={s.k} className="bg-ink-2 px-2 py-4">
                 <dd className="font-display text-3xl leading-none text-bone">{s.v}</dd>
@@ -182,12 +182,16 @@ export function ResumeSheet() {
             ))}
           </ul>
 
+          {certifications.length > 0 && (
+            <>
           <H>Certifications</H>
           <p className="text-xs leading-relaxed text-mist">
             {Array.from(new Set(certifications.map((c) => c.issuer)))
               .map((iss) => `${iss}: ${certifications.filter((c) => c.issuer === iss).map((c) => c.name).join(', ')}`)
               .join(' · ')}
           </p>
+            </>
+          )}
         </div>
       </div>
     </article>

@@ -40,13 +40,13 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
     education[0].period.split(' – ')[0].split(' ')[1] + ' – Present',
     'BS Computer Science AI Expert',
     `${projects.length} Originals`,
-    `${certifications.length} Certifications`,
+    ...(certifications.length > 0 ? [`${certifications.length} Certifications`] : []),
   ];
 
   const floating = [
     { text: 'BS Computer Science', sub: 'AI Expert', pos: 'left-[2%] top-[30%]', depth: 1 },
     { text: 'UOH', sub: 'University of Haripur', pos: 'right-[-4%] top-[18%]', depth: -1 },
-    { text: 'PHP Frameworks · React · Node.js', sub: 'Primary stack', pos: 'right-[4%] bottom-[24%]', depth: 0.6 },
+    { text: 'PHP Frameworks · React · Angular', sub: 'Primary stack', pos: 'right-[4%] bottom-[24%]', depth: 0.6 },
   ];
 
   return (

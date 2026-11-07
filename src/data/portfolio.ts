@@ -17,12 +17,18 @@ export const profile = {
   tagline: ['Full-Stack Developer', 'CS / AI', 'PHP Frameworks'],
   intro:
     'A full-stack web developer with a BS in Computer Science from the University of Haripur, working with AI prompts and AI automations and building systems with PHP, JavaScript, Angular, React and SQL databases.',
-  aboutFacts: [
-    { k: 'Education', v: 'BS Computer Science', s: 'University of Haripur' },
-    { k: 'Role', v: 'Full-Stack Web Developer', s: 'PHP, JavaScript, Angular, React' },
-    { k: 'AI', v: 'AI Prompts', s: 'and AI Automations' },
-    { k: 'Building', v: 'Systems', s: 'with SQL, PostgreSQL and MongoDB' },
-  ],
+  about: {
+    headline: 'I build real business systems',
+    headlineAccent: 'and make them smarter with AI.',
+    role: 'Full-Stack Web Developer',
+    bio: "I'm a full-stack web developer with a Computer Science background from the University of Haripur. I turn everyday operations, like stock ageing and plant nursery management, into clear web systems that teams can work from.",
+    education: { degree: 'BS Computer Science AI Expert', school: 'University of Haripur' },
+    pillars: [
+      { icon: 'code', title: 'Full-Stack Development', text: 'Web apps built with PHP, JavaScript, Angular and React.' },
+      { icon: 'spark', title: 'AI Prompts & Automations', text: 'Prompts and automations that take repetitive work off the team.' },
+      { icon: 'layers', title: 'Building Systems', text: 'Dashboards and management systems on SQL, PostgreSQL and MongoDB.' },
+    ] as const,
+  },
   email: 'faheem.ehsan90@gmail.com',
   links: {
     linkedin: 'https://www.linkedin.com/in/faheem-tanoli',
@@ -216,70 +222,30 @@ export const achievements: Achievement[] = [
     laurel: 'UOH',
   },
   {
-    id: 'flipkart-grid',
-    title: 'Semi-Finalist',
-    org: 'Flipkart GRiD 7.0',
-    detail: 'Competed among top national engineering talent.',
-    laurel: 'Semi-Finalist',
-    link: 'https://drive.google.com/file/d/16pXA2hssyJqlYMr27wfi6U4bjKDLvh9f/view?usp=drive_link',
-  },
-  {
-    id: 'branch-topper',
+    id: 'cgpa',
     title: 'CGPA 2.9',
     org: 'BS Computer Science AI Expert',
     detail: 'University of Haripur.',
     laurel: 'CGPA 2.9',
   },
-  {
-    id: 'competitive-coding',
-    title: '850+ Problems Solved',
-    org: 'LeetCode • GFG • CodeChef',
-    detail: 'LeetCode: 350+ DSA problems (peak rating 1442). GFG: 300+ problems (rating 1436). CodeChef: 200+ problems.',
-    laurel: 'Competitive Coding',
-  },
-  {
-    id: 'hackerrank',
-    title: '5-Star Badges',
-    org: 'HackerRank',
-    detail: '5-star badges in C, Python, Java, and SQL.',
-    laurel: 'Four Languages',
-  },
 ];
 
 export type Certification = { issuer: string; name: string; link: string };
 
-export const certifications: Certification[] = [
-  { issuer: 'NPTEL', name: 'Database Management System', link: 'https://drive.google.com/file/d/1MqkJHchXeaGD4S8mzPmEGxEYddAsxAjN/view?usp=drive_link' },
-  { issuer: 'NPTEL', name: 'Fundamentals of Artificial Intelligence', link: 'https://drive.google.com/file/d/1GqyUQ-lrE-bHaN457t6fIdssgGG4HMXf/view?usp=drive_link' },
-  { issuer: 'NPTEL', name: 'Deep Learning', link: 'https://drive.google.com/file/d/1PWSRP5SQDPzkoTCF3A24eIJoSpTwgsff/view?usp=sharing' },
-  { issuer: 'AWS', name: 'AWS Certified AI Practitioner', link: 'https://drive.google.com/file/d/1h8e5p0a9T6f5gBaOP2ROfwWHZfkkspGn/view?usp=drive_link' },
-  { issuer: 'AWS', name: 'AWS Academy Graduate – Cloud Foundations', link: 'https://www.credly.com/badges/2d4810f9-3dbe-444d-99b9-61312ea5e7df/public_url' },
-  { issuer: 'MongoDB', name: 'MongoDB Certified Associate Developer', link: 'https://www.credly.com/badges/fd3362bd-743a-4c4d-a68e-b1fdc5d46811/public_url' },
-  { issuer: 'GitHub', name: 'GitHub Foundations', link: 'https://drive.google.com/file/d/1o0fkCAMRWTg1oMwxlqu6t6wnOpBv66Vq/view?usp=sharing' },
-  { issuer: 'Pearson', name: 'IT Specialist – HTML and CSS', link: 'https://www.credly.com/badges/e4a55298-e396-41d8-a032-283aafe9fab7/public_url' },
-  { issuer: 'Oracle', name: 'Java Certified Foundations Associate', link: 'https://drive.google.com/file/d/1g-yyceHtLg_k2RWiOIJqH0MMcGlaH90P/view?usp=sharing' },
-  { issuer: 'Oracle', name: 'Oracle Certified Foundations Associate – Database', link: 'https://drive.google.com/file/d/10-DzabbcH2vHrI6bAohoT8czKRZMa2kV/view?usp=drive_link' },
-  { issuer: 'Cisco', name: 'HTML Essentials', link: 'https://www.credly.com/badges/eb27ca95-3b2a-4948-bef9-0385d1d49055/public_url' },
-  { issuer: 'Cisco', name: 'CSS Essentials', link: 'https://www.credly.com/badges/3b37497f-6a61-4889-af3c-ed337a460a0b/public_url' },
-  { issuer: 'Cisco', name: 'JavaScript Essentials 1', link: 'https://www.credly.com/badges/9cdd4d55-6ecc-463f-b254-811ccdd0539c/public_url' },
-  { issuer: 'Cisco', name: 'JavaScript Essentials 2', link: 'https://www.credly.com/badges/0e1b036e-4318-4c8e-b750-2aca77314442/public_url' },
-  { issuer: 'Cisco', name: 'Python Essentials 1', link: 'https://www.credly.com/badges/0e21e3eb-d8ef-4770-95d7-dcbd6f8696b1/public_url' },
-  { issuer: 'Udemy', name: 'Microsoft Azure Hands-On Training (AZ-900, AZ-104, AZ-305)', link: 'https://drive.google.com/file/d/1KrXClhY0nJ3Acxs7DioNf4Q1rpaMvgPT/view?usp=sharing' },
-];
+/** Add your own here. Everything certification-related stays hidden while this is empty. */
+export const certifications: Certification[] = [];
 
 export type Skill = { name: string; mono: string; note?: string };
 export type SkillCategory = { id: string; title: string; subtitle: string; skills: Skill[] };
 
 export const skillCategories: SkillCategory[] = [
   {
-    id: 'languages',
-    title: 'Languages',
+    id: 'backend',
+    title: 'Backend',
     subtitle: 'PHP Frameworks come first',
     skills: [
       { name: 'PHP Frameworks', mono: 'Ph', note: 'Primary' },
-      { name: 'Python', mono: 'Py' },
-      { name: 'C', mono: 'C' },
-      { name: 'C++', mono: 'C+' },
+      { name: 'PHP', mono: 'Hp' },
     ],
   },
   {
@@ -287,67 +253,31 @@ export const skillCategories: SkillCategory[] = [
     title: 'Frontend',
     subtitle: 'Interfaces & the web platform',
     skills: [
+      { name: 'Angular', mono: 'Ng' },
       { name: 'React', mono: 'Re' },
+      { name: 'JavaScript', mono: 'Js' },
       { name: 'HTML', mono: 'Ht' },
       { name: 'CSS', mono: 'Cs' },
-      { name: 'JavaScript', mono: 'Js' },
-    ],
-  },
-  {
-    id: 'backend',
-    title: 'Backend',
-    subtitle: 'Server-side logic',
-    skills: [
-      { name: 'Node.js', mono: 'No' },
-      { name: 'Express.js', mono: 'Ex' },
-    ],
-  },
-  {
-    id: 'infra',
-    title: 'Infra & Tools',
-    subtitle: 'Shipping & architecture',
-    skills: [
-      { name: 'Docker', mono: 'Dk' },
-      { name: 'Docker Compose', mono: 'Dc' },
-      { name: 'REST APIs', mono: 'Ap' },
-      { name: 'Microservices', mono: 'Ms' },
-      { name: 'JWT Auth', mono: 'Jw' },
-      { name: 'Git / GitHub', mono: 'Gt' },
-      { name: 'Postman', mono: 'Pm' },
     ],
   },
   {
     id: 'databases',
     title: 'Databases',
-    subtitle: 'Indexing • Normalization',
+    subtitle: 'Where the data lives',
     skills: [
+      { name: 'SQL', mono: 'Sq' },
       { name: 'PostgreSQL', mono: 'Pg' },
       { name: 'MongoDB', mono: 'Mg' },
-      { name: 'MySQL', mono: 'My' },
     ],
   },
   {
-    id: 'fundamentals',
-    title: 'CS Fundamentals',
-    subtitle: 'The foundations',
+    id: 'ai-systems',
+    title: 'AI & Systems',
+    subtitle: 'Prompts, automations and systems',
     skills: [
-      { name: 'DSA', mono: 'Ds' },
-      { name: 'OS', mono: 'Os' },
-      { name: 'CN', mono: 'Cn' },
-      { name: 'DBMS', mono: 'Db' },
-      { name: 'OOPs', mono: 'Oo' },
-      { name: 'Collections', mono: 'Co' },
-      { name: 'Multithreading', mono: 'Mt' },
-    ],
-  },
-  {
-    id: 'interests',
-    title: 'Interests',
-    subtitle: 'Coming soon to the series',
-    skills: [
-      { name: 'System Design', mono: 'Sd' },
-      { name: 'Cloud Computing (AWS)', mono: 'Aw' },
-      { name: 'Machine Learning', mono: 'Ml' },
+      { name: 'AI Prompts', mono: 'Ap' },
+      { name: 'AI Automations', mono: 'Au' },
+      { name: 'Building Systems', mono: 'Bs' },
     ],
   },
 ];
@@ -357,17 +287,7 @@ export const skillCategories: SkillCategory[] = [
  * where the skill appears in the projects, certifications or achievements on the resume.
  */
 export const skillEvidence: Record<string, string[]> = {
-  Python: ['Cisco Python Essentials 1', 'HackerRank 5-star'],
-  C: ['HackerRank 5-star'],
-  HTML: ['Pearson IT Specialist – HTML and CSS', 'Cisco HTML Essentials'],
-  CSS: ['Pearson IT Specialist – HTML and CSS', 'Cisco CSS Essentials'],
-  JavaScript: ['Cisco JavaScript Essentials 1 & 2'],
-  'Git / GitHub': ['GitHub Foundations'],
-  MongoDB: ['MongoDB Certified Associate Developer'],
-  DBMS: ['NPTEL Database Management System', 'Oracle Database Foundations'],
-  DSA: ['UOH', '850+ problems solved'],
-  'Cloud Computing (AWS)': ['AWS Certified AI Practitioner', 'AWS Academy Cloud Foundations'],
-  'Machine Learning': ['BS Computer Science AI Expert', 'NPTEL Deep Learning'],
+  'Building Systems': ['Stock Ageing Dashboard', 'QR Code and Plant Nursery', 'Plants Treatment System'],
 };
 
 export type Episode = {
@@ -431,14 +351,6 @@ export const seasons: Season[] = [
         tags: ['CGPA 2.9'],
         runtime: 'BS Computer Science',
         palette: crimson,
-      },
-      {
-        code: 'S02 E03',
-        title: 'The Problem Solver',
-        description: 'LeetCode 350+ (peak 1442), GFG 300+ (1436), CodeChef 200+ and HackerRank 5-star badges in C, Python, Java and SQL.',
-        tags: ['DSA', 'LeetCode', 'GFG', 'CodeChef', 'HackerRank'],
-        runtime: '850+ problems',
-        palette: jade,
       },
     ],
   },
@@ -507,9 +419,9 @@ export const seasons: Season[] = [
       {
         code: 'S04 E04',
         title: 'UOH',
-        description: 'University of Haripur. Semi-Finalist at Flipkart GRiD 7.0.',
-        tags: ['UOH', 'Flipkart GRiD 7.0'],
-        runtime: 'National stage',
+        description: 'University of Haripur.',
+        tags: ['UOH'],
+        runtime: 'BS Computer Science',
         palette: ocean,
       },
     ],
@@ -518,13 +430,13 @@ export const seasons: Season[] = [
     number: 5,
     title: "What's Next",
     period: 'Now streaming',
-    synopsis: 'The interests on the resume point to the next arc of the story.',
+    synopsis: 'More AI, more automation and more systems.',
     episodes: [
       {
         code: 'S05 E01',
         title: 'The Next Chapter',
-        description: 'Exploring System Design, Cloud Computing (AWS) and Machine Learning.',
-        tags: ['System Design', 'AWS', 'Machine Learning'],
+        description: 'Building more systems with AI prompts and AI automations.',
+        tags: ['AI Prompts', 'AI Automations', 'Building Systems'],
         runtime: 'In production',
         palette: violet,
       },
@@ -536,15 +448,15 @@ export type TopPick = { label: string; title: string; detail: string; palette: P
 
 export const topPicks: TopPick[] = [
   { label: 'Primary stack', title: 'PHP Frameworks', detail: 'with JavaScript, Angular and React', palette: amber },
-  { label: 'The Originals', title: 'Stock Ageing Dashboard', detail: 'QR Code and Plant Nursery • Plants Treatment System', palette: crimson },
-  { label: 'Biggest stage', title: 'Flipkart GRiD 7.0', detail: 'Semi-Finalist', palette: ocean },
-  { label: 'University', title: 'UOH', detail: 'University of Haripur', palette: violet },
+  { label: 'The Originals', title: 'Stock Ageing Dashboard', detail: 'Finished goods stock for Qarshi', palette: crimson },
+  { label: 'The Originals', title: 'QR Code and Plant Nursery', detail: 'A QR code for every plant', palette: jade },
+  { label: 'The Originals', title: 'Plants Treatment System', detail: 'Managing plant treatments', palette: ocean },
+  { label: 'AI', title: 'AI Prompts', detail: 'and AI Automations', palette: violet },
+  { label: 'University', title: 'UOH', detail: 'University of Haripur', palette: amber },
   { label: 'Academics', title: 'CGPA 2.9', detail: 'BS Computer Science', palette: jade },
-  { label: 'Cloud credential', title: 'AWS AI Practitioner', detail: 'AWS Certified', palette: amber },
-  { label: 'Problems solved', title: '850+', detail: 'LeetCode 350+ • GFG 300+ • CodeChef 200+', palette: crimson },
-  { label: 'The training arc', title: '1 Year of FSD', detail: 'Technical Hub Pvt Ltd', palette: ocean },
-  { label: 'Database credential', title: 'MongoDB', detail: 'Certified Associate Developer', palette: jade },
-  { label: 'Current focus', title: 'System Design', detail: 'with Cloud (AWS) & Machine Learning', palette: violet },
+  { label: 'Frontend', title: 'Angular & React', detail: 'with HTML, CSS and JavaScript', palette: ocean },
+  { label: 'Databases', title: 'SQL & PostgreSQL', detail: 'with MongoDB', palette: crimson },
+  { label: 'Role', title: 'Full-Stack Web Developer', detail: 'Building systems', palette: violet },
 ];
 
 /** Slides for the "▶ Play Intro" cinematic sequence. */
@@ -560,8 +472,8 @@ export const introSlides: IntroSlide[] = [
   {
     kicker: 'Skills',
     title: 'PHP Frameworks first.',
-    lines: ['Python, C, C++ · React, Node.js, Express.js', 'PostgreSQL, MongoDB, MySQL · Docker, REST, JWT'],
-    chips: ['PHP Frameworks', 'Python', 'React', 'Node.js', 'Docker', 'PostgreSQL'],
+    lines: ['PHP · JavaScript · HTML · CSS · Angular · React', 'SQL · PostgreSQL · MongoDB'],
+    chips: ['PHP Frameworks', 'Angular', 'React', 'JavaScript', 'PostgreSQL', 'MongoDB'],
   },
   {
     kicker: 'Training',
@@ -576,17 +488,12 @@ export const introSlides: IntroSlide[] = [
   {
     kicker: 'Achievements',
     title: 'Top Moments',
-    lines: ['UOH — University of Haripur', 'Semi-Finalist — Flipkart GRiD 7.0', 'CGPA 2.9'],
-  },
-  {
-    kicker: 'Certified',
-    title: '16 Certifications',
-    lines: ['AWS · MongoDB · Oracle · GitHub · Pearson', 'NPTEL · Cisco · Udemy'],
+    lines: ['UOH — University of Haripur', 'CGPA 2.9'],
   },
   {
     kicker: 'Current mission',
     title: 'Now exploring',
-    lines: ['System Design · Cloud Computing (AWS) · Machine Learning'],
+    lines: ['AI Prompts · AI Automations · Building Systems'],
   },
 ];
 
@@ -634,8 +541,8 @@ export const sectionMeta: Record<SectionId, { nav: string; card: string; meta: s
   about: { nav: 'About', card: 'About Me', meta: 'The Pilot • Education & skills', palette: violet },
   journey: { nav: 'Journey', card: 'My Journey', meta: `${seasons.length} Seasons • ${seasons.reduce((n, s) => n + s.episodes.length, 0)} Episodes`, palette: amber },
   originals: { nav: 'Originals', card: 'My Projects', meta: `${projects.length} Originals`, palette: crimson },
-  picks: { nav: 'Top Picks', card: 'Top Picks', meta: 'Top 10 from the resume', palette: jade },
+  picks: { nav: 'Top Picks', card: 'Top Picks', meta: 'Top 10 picks', palette: jade },
   skills: { nav: 'Skills', card: 'My Skills', meta: `${skillCategories.length} Categories`, palette: ocean },
-  moments: { nav: 'Moments', card: 'My Achievements', meta: `${achievements.length} Moments • ${certifications.length} Certifications`, palette: crimson },
+  moments: { nav: 'Moments', card: 'My Achievements', meta: `${achievements.length} Moments`, palette: crimson },
   story: { nav: 'Resume', card: 'The Full Story', meta: 'Resume • View & download', palette: violet },
 };

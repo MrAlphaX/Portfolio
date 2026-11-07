@@ -23,7 +23,7 @@ export default function Achievements() {
     <>
       <SectionHeading kicker="Awards season" title="Top Moments" />
 
-      <div className="gutter grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 [perspective:1400px]">
+      <div className="gutter grid max-w-4xl gap-4 sm:grid-cols-2 [perspective:1400px]">
         {achievements.map((a, i) => (
           <motion.div
             key={a.id}
@@ -64,6 +64,7 @@ export default function Achievements() {
       </div>
 
       {/* certifications rail */}
+      {certifications.length > 0 && (
       <div className="mt-16">
         <div className="gutter mb-2 flex flex-wrap items-end justify-between gap-2">
           <h3 className="font-sans text-lg font-semibold text-bone sm:text-2xl">
@@ -97,6 +98,7 @@ export default function Achievements() {
           <RailButtons rail={rail} />
         </div>
       </div>
+      )}
     </>
   );
 }
