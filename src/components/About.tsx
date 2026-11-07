@@ -1,15 +1,8 @@
 import { motion } from 'framer-motion';
-import { education, experience, profile } from '../data/portfolio';
+import { profile } from '../data/portfolio';
 import { EASE, SectionHeading, Tilt } from './fx';
 
 export default function About() {
-  const facts = [
-    { k: 'Now', v: 'B.Tech, AI & ML', s: `${education[0].school} · ${education[0].score}` },
-    { k: 'Training', v: `${experience[0].role}, ${experience[0].company}`, s: experience[0].period },
-    { k: 'Primary language', v: 'Java', s: 'with Python, C, C++' },
-    { k: 'Based in', v: profile.location, s: 'India' },
-  ];
-
   return (
     <>
       <SectionHeading kicker="The Pilot" title="About Me" />
@@ -26,7 +19,7 @@ export default function About() {
             <div className="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_30%,#5a0b1b,#14060a_60%,#07070a)]" />
             <div className="absolute inset-0 opacity-50 [background-image:repeating-linear-gradient(90deg,rgba(255,255,255,0.03)_0px,rgba(255,255,255,0.03)_1px,transparent_1px,transparent_28px)]" />
             <img
-              src="/assets/portrait-720.webp"
+              src="assets/portrait-720.webp"
               srcSet={profile.portrait.srcSet}
               sizes="(max-width: 1024px) 90vw, 40vw"
               alt={profile.portrait.alt}
@@ -64,7 +57,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ staggerChildren: 0.08 }}
           >
-            {facts.map((f) => (
+            {profile.aboutFacts.map((f) => (
               <motion.div
                 key={f.k}
                 className="bg-ink-2 p-5"
@@ -78,9 +71,9 @@ export default function About() {
           </motion.dl>
 
           <div className="mt-8">
-            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.28em] text-smoke">Interests</p>
+            <p className="mb-3 text-[10px] font-bold uppercase tracking-[0.28em] text-smoke">Skills</p>
             <div className="flex flex-wrap gap-2">
-              {profile.interests.map((i) => (
+              {profile.skills.map((i) => (
                 <span key={i} className="glass rounded-full px-3 py-1.5 text-xs font-medium text-bone">
                   {i}
                 </span>

@@ -50,19 +50,19 @@ export function ProjectArt({ project, className = '' }: { project: Project; clas
             <path d="M40 124 l12 12 l26 -28" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
           </g>
         )}
-        {project.motif === 'flow' && (
+        {project.motif === 'chart' && (
           <g fill="none" stroke={a}>
-            <rect x="200" y="56" width="150" height="94" rx="12" strokeWidth="2" strokeOpacity="0.85" />
-            <rect x="214" y="72" width="28" height="20" rx="4" strokeOpacity="0.7" />
-            <line x1="214" x2="330" y1="124" y2="124" strokeWidth="3" strokeOpacity="0.4" strokeDasharray="18 8" />
-            <g transform="translate(176 196)" fontFamily="Inter" fontSize="10" fill={a} stroke="none" letterSpacing="2">
-              <circle cx="16" cy="16" r="16" fill="none" stroke={a} strokeWidth="2" />
-              <path d="M34 16 h46" stroke={a} strokeWidth="2" />
-              <circle cx="96" cy="16" r="16" fill="none" stroke={a} strokeWidth="2" strokeOpacity="0.8" />
-              <path d="M112 8 l38 -22 M112 24 l38 22" stroke={a} strokeWidth="2" strokeOpacity="0.6" />
-              <circle cx="166" cy="-18" r="10" fill={a} fillOpacity="0.8" />
-              <circle cx="166" cy="50" r="10" fill="none" stroke={a} strokeWidth="2" strokeOpacity="0.5" />
-            </g>
+            <rect x="190" y="50" width="176" height="190" rx="12" strokeWidth="2" strokeOpacity="0.85" />
+            <line x1="208" x2="348" y1="214" y2="214" strokeWidth="2" strokeOpacity="0.5" />
+            {[
+              [214, 58],
+              [242, 92],
+              [270, 76],
+              [298, 122],
+              [326, 140],
+            ].map(([x, h], i) => (
+              <rect key={x} x={x} y={214 - h} width="18" height={h} rx="3" fill={a} fillOpacity={0.25 + i * 0.13} stroke="none" />
+            ))}
           </g>
         )}
         {project.motif === 'tenants' && (

@@ -82,8 +82,12 @@ export default function ProjectModal({ project, onClose, onSwitch }: { project: 
 
           <motion.div className="px-5 pb-12 sm:px-10" initial="hidden" animate="show" transition={{ staggerChildren: 0.08, delayChildren: 0.25 }}>
             <motion.div variants={block} className="flex flex-wrap items-center gap-x-3 gap-y-2 text-sm text-mist">
-              <span className="font-semibold text-[#46e3a8]">{project.year}</span>
-              <span className="h-1 w-1 rounded-full bg-smoke" />
+              {project.year && (
+                <>
+                  <span className="font-semibold text-[#46e3a8]">{project.year}</span>
+                  <span className="h-1 w-1 rounded-full bg-smoke" />
+                </>
+              )}
               <span>{project.genre}</span>
             </motion.div>
 
@@ -107,7 +111,35 @@ export default function ProjectModal({ project, onClose, onSwitch }: { project: 
               </motion.div>
             )}
 
+            {/* screens */}
+            {project.screenshots && project.screenshots.length > 0 && (
+              <motion.section variants={block} className="mt-12">
+                <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.3em] text-crimson-2">Screens</h3>
+                <div className="grid items-start gap-x-5 gap-y-8 md:grid-cols-2">
+                  {project.screenshots.map((s, i) => (
+                    <figure key={s.src} className={i === 0 && project.screenshots!.length % 2 === 1 ? 'md:col-span-2' : undefined}>
+                      <a
+                        href={s.src}
+                        target="_blank"
+                        rel="noreferrer"
+                        data-cursor="view"
+                        aria-label={`Open full-size screenshot: ${s.title}`}
+                        className="block overflow-hidden rounded-xl ring-1 ring-white/10 transition hover:ring-white/30"
+                      >
+                        <img src={s.src} alt={s.alt} loading="lazy" className="block h-auto w-full" />
+                      </a>
+                      <figcaption className="mt-3">
+                        <p className="text-sm font-semibold text-bone">{s.title}</p>
+                        <p className="mt-1 text-sm leading-relaxed text-mist">{s.caption}</p>
+                      </figcaption>
+                    </figure>
+                  ))}
+                </div>
+              </motion.section>
+            )}
+
             {/* impact */}
+            {project.metrics.length > 0 && (
             <motion.section variants={block} className="mt-12">
               <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.3em] text-crimson-2">Result / Impact</h3>
               <div className="grid grid-cols-2 gap-px overflow-hidden rounded-xl bg-white/10 sm:grid-cols-3 lg:grid-cols-5">
@@ -127,8 +159,11 @@ export default function ProjectModal({ project, onClose, onSwitch }: { project: 
                 ))}
               </div>
             </motion.section>
+            )}
 
-            <div className="mt-12 grid gap-10 lg:grid-cols-[3fr_2fr]">
+            {project.build.length + project.stack.length + project.features.length > 0 && (
+            <div className={`mt-12 grid gap-10 ${project.build.length > 0 ? 'lg:grid-cols-[3fr_2fr]' : ''}`}>
+              {project.build.length > 0 && (
               <motion.section variants={block}>
                 <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.3em] text-crimson-2">My Contribution</h3>
                 <ul className="space-y-4">
@@ -140,7 +175,9 @@ export default function ProjectModal({ project, onClose, onSwitch }: { project: 
                   ))}
                 </ul>
               </motion.section>
+              )}
               <div className="space-y-10">
+                {project.stack.length > 0 && (
                 <motion.section variants={block}>
                   <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.3em] text-crimson-2">Tech Stack</h3>
                   <div className="flex flex-wrap gap-2">
@@ -151,9 +188,11 @@ export default function ProjectModal({ project, onClose, onSwitch }: { project: 
                     ))}
                   </div>
                 </motion.section>
+                )}
+                {project.features.length > 0 && (
                 <motion.section variants={block}>
                   <h3 className="mb-4 text-[11px] font-bold uppercase tracking-[0.3em] text-crimson-2">Key Features</h3>
-                  <ul className="space-y-2.5">
+                  <ul className="grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
                     {project.features.map((f) => (
                       <li key={f} className="flex items-start gap-3 text-sm text-bone/85">
                         <span className="text-crimson-2">✓</span>
@@ -162,8 +201,10 @@ export default function ProjectModal({ project, onClose, onSwitch }: { project: 
                     ))}
                   </ul>
                 </motion.section>
+                )}
               </div>
             </div>
+            )}
 
             {/* more like this */}
             <motion.section variants={block} className="mt-14 border-t border-white/10 pt-8">
