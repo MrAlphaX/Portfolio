@@ -23,17 +23,19 @@ export default function Achievements() {
     <>
       <SectionHeading kicker="Awards season" title="Top Moments" />
 
-      <div className="gutter grid max-w-4xl gap-4 sm:grid-cols-2 [perspective:1400px]">
+      {/* one line: a swipeable row on small screens, five equal columns from xl up */}
+      <div className="rail gutter flex snap-x gap-4 overflow-x-auto py-2 [perspective:1400px] xl:grid xl:grid-cols-5 xl:overflow-visible">
         {achievements.map((a, i) => (
           <motion.div
             key={a.id}
+            className="w-[72vw] shrink-0 snap-start sm:w-[270px] xl:w-auto"
             initial={{ opacity: 0, y: 50, rotateX: 18 }}
             whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
             viewport={{ once: true, margin: '-8% 0px' }}
             transition={{ duration: 0.9, delay: i * 0.08, ease: EASE }}
           >
             <Tilt max={8} className="group h-full rounded-2xl">
-              <article className="relative flex h-full min-h-[340px] flex-col items-center overflow-hidden rounded-2xl bg-[radial-gradient(120%_80%_at_50%_0%,#2a1f10,#0d0b08_60%,#07070a)] px-5 pb-6 pt-8 text-center ring-1 ring-[#d9b46a]/20 transition duration-500 group-hover:ring-[#d9b46a]/60">
+              <article className="relative flex h-full min-h-[280px] flex-col items-center overflow-hidden rounded-2xl bg-[radial-gradient(120%_80%_at_50%_0%,#2a1f10,#0d0b08_60%,#07070a)] px-4 pb-6 pt-8 text-center ring-1 ring-[#d9b46a]/20 transition duration-500 group-hover:ring-[#d9b46a]/60">
                 <div aria-hidden className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#d9b46a]/70 to-transparent" />
                 <div aria-hidden className="absolute -top-24 left-1/2 h-48 w-48 -translate-x-1/2 rounded-full bg-[#d9b46a]/10 blur-3xl transition duration-700 group-hover:bg-[#d9b46a]/25" />
                 <div className="relative flex items-center gap-1">
@@ -43,7 +45,7 @@ export default function Achievements() {
                   </div>
                   <Laurel side="r" />
                 </div>
-                <h3 className="relative mt-6 font-display text-[2.1rem] leading-[0.92] tracking-wide text-bone">{a.title}</h3>
+                <h3 className="relative mt-6 font-display text-[1.9rem] leading-[0.92] tracking-wide text-bone">{a.title}</h3>
                 <p className="relative mt-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#d9b46a]">{a.org}</p>
                 <p className="relative mt-4 text-[13px] leading-relaxed text-bone/70">{a.detail}</p>
                 {a.link && (

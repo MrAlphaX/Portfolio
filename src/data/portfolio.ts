@@ -40,7 +40,7 @@ export const profile = {
     srcSet: 'assets/portrait-420.webp 420w, assets/portrait-720.webp 720w, assets/portrait-1100.webp 1100w',
     alt: 'Portrait of Faheem Ehsan Tanoli',
   },
-  skills: ['PHP', 'JavaScript', 'HTML', 'CSS', 'Angular', 'React', 'SQL', 'PostgreSQL', 'MongoDB'],
+  skills: ['PHP', 'JavaScript', 'HTML', 'CSS', 'Angular', 'React', 'SQL', 'PostgreSQL', 'MongoDB', 'Lua', 'FiveM Server Development'],
 };
 
 export const education = [
@@ -215,18 +215,39 @@ export type Achievement = {
 
 export const achievements: Achievement[] = [
   {
+    id: 'itec-internship',
+    title: 'Internship',
+    org: 'ITEC Peshawar',
+    detail: 'At the University of Haripur.',
+    laurel: 'Internship',
+  },
+  {
+    id: 'computing-society',
+    title: 'Founding Member',
+    org: 'Computing Society UOH',
+    detail: 'University of Haripur.',
+    laurel: 'Founding Member',
+  },
+  {
+    id: 'ai-coordinator',
+    title: 'AI Coordinator',
+    org: 'Qarshi Organization',
+    detail: 'QRI-IT.',
+    laurel: 'AI Coordinator',
+  },
+  {
+    id: 'fivem',
+    title: 'FiveM Developer',
+    org: 'Lua Server Development',
+    detail: 'Building game servers with Lua.',
+    laurel: 'FiveM',
+  },
+  {
     id: 'uoh',
     title: 'UOH',
     org: 'University of Haripur',
     detail: 'BS Computer Science AI Expert.',
     laurel: 'UOH',
-  },
-  {
-    id: 'cgpa',
-    title: 'CGPA 2.9',
-    org: 'BS Computer Science AI Expert',
-    detail: 'University of Haripur.',
-    laurel: 'CGPA 2.9',
   },
 ];
 
@@ -245,7 +266,9 @@ export const skillCategories: SkillCategory[] = [
     subtitle: 'PHP Frameworks come first',
     skills: [
       { name: 'PHP Frameworks', mono: 'Ph', note: 'Primary' },
-      { name: 'PHP', mono: 'Hp' },
+      { name: 'Node.js', mono: 'No' },
+      { name: 'Express.js', mono: 'Ex' },
+      { name: 'REST APIs', mono: 'Ra' },
     ],
   },
   {
@@ -268,6 +291,15 @@ export const skillCategories: SkillCategory[] = [
       { name: 'SQL', mono: 'Sq' },
       { name: 'PostgreSQL', mono: 'Pg' },
       { name: 'MongoDB', mono: 'Mg' },
+    ],
+  },
+  {
+    id: 'game-servers',
+    title: 'Game Servers',
+    subtitle: 'FiveM servers built with Lua',
+    skills: [
+      { name: 'Lua', mono: 'Lu' },
+      { name: 'FiveM Server Development', mono: 'Fm' },
     ],
   },
   {
@@ -452,11 +484,11 @@ export const topPicks: TopPick[] = [
   { label: 'The Originals', title: 'QR Code and Plant Nursery', detail: 'A QR code for every plant', palette: jade },
   { label: 'The Originals', title: 'Plants Treatment System', detail: 'Managing plant treatments', palette: ocean },
   { label: 'AI', title: 'AI Prompts', detail: 'and AI Automations', palette: violet },
-  { label: 'University', title: 'UOH', detail: 'University of Haripur', palette: amber },
-  { label: 'Academics', title: 'CGPA 2.9', detail: 'BS Computer Science', palette: jade },
+  { label: 'Education', title: 'BS Computer Science', detail: 'AI Expert, University of Haripur', palette: amber },
+  { label: 'Backend', title: 'Node.js & Express.js', detail: 'with REST APIs', palette: jade },
   { label: 'Frontend', title: 'Angular & React', detail: 'with HTML, CSS and JavaScript', palette: ocean },
   { label: 'Databases', title: 'SQL & PostgreSQL', detail: 'with MongoDB', palette: crimson },
-  { label: 'Role', title: 'Full-Stack Web Developer', detail: 'Building systems', palette: violet },
+  { label: 'Game Servers', title: 'Lua & FiveM', detail: 'FiveM server development', palette: violet },
 ];
 
 /** Slides for the "▶ Play Intro" cinematic sequence. */
@@ -472,7 +504,7 @@ export const introSlides: IntroSlide[] = [
   {
     kicker: 'Skills',
     title: 'PHP Frameworks first.',
-    lines: ['PHP · JavaScript · HTML · CSS · Angular · React', 'SQL · PostgreSQL · MongoDB'],
+    lines: ['PHP · JavaScript · HTML · CSS · Angular · React', 'SQL · PostgreSQL · MongoDB', 'Lua · FiveM Server Development'],
     chips: ['PHP Frameworks', 'Angular', 'React', 'JavaScript', 'PostgreSQL', 'MongoDB'],
   },
   {
@@ -488,7 +520,7 @@ export const introSlides: IntroSlide[] = [
   {
     kicker: 'Achievements',
     title: 'Top Moments',
-    lines: ['UOH — University of Haripur', 'CGPA 2.9'],
+    lines: ['Internship — ITEC Peshawar', 'Founding Member — Computing Society UOH', 'AI Coordinator — Qarshi Organization (QRI-IT)'],
   },
   {
     kicker: 'Current mission',

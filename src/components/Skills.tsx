@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { skillCategories, skillEvidence, type Skill } from '../data/portfolio';
 import { EASE, SectionHeading } from './fx';
+import { skillIcons } from './skillIcons';
 
 const HUES = ['#ff3d5a', '#4cc9ff', '#46e3a8', '#ffb547', '#b98bff', '#ff8a5c', '#7ee0ff'];
 
@@ -62,6 +63,7 @@ export default function Skills() {
 function SkillCard({ skill, hue }: { skill: Skill; hue: string }) {
   const [open, setOpen] = useState(false);
   const evidence = skillEvidence[skill.name];
+  const Icon = skillIcons[skill.name];
 
   return (
     <motion.button
@@ -87,7 +89,7 @@ function SkillCard({ skill, hue }: { skill: Skill; hue: string }) {
         transition={{ duration: 0.5 }}
         aria-hidden
       >
-        {skill.mono}
+        {Icon ? <Icon size={26} /> : skill.mono}
       </motion.span>
       <span className="relative mt-4 flex items-center gap-2 text-[15px] font-semibold text-bone">
         {skill.name}
