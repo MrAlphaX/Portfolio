@@ -154,7 +154,7 @@ export function ResumeSheet() {
                 <p className="text-sm font-semibold text-bone">{p.title}</p>
                 <p className="text-xs text-smoke">{p.year}</p>
               </div>
-              <p className="text-xs text-mist">{p.stack.join(', ')}</p>
+              {p.stack.length > 0 && <p className="text-xs text-mist">{p.stack.join(', ')}</p>}
             </div>
           ))}
         </div>

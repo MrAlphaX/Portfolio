@@ -50,19 +50,19 @@ export function ProjectArt({ project, className = '' }: { project: Project; clas
             <path d="M40 124 l12 12 l26 -28" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
           </g>
         )}
-        {project.motif === 'flow' && (
+        {project.motif === 'chart' && (
           <g fill="none" stroke={a}>
-            <rect x="200" y="56" width="150" height="94" rx="12" strokeWidth="2" strokeOpacity="0.85" />
-            <rect x="214" y="72" width="28" height="20" rx="4" strokeOpacity="0.7" />
-            <line x1="214" x2="330" y1="124" y2="124" strokeWidth="3" strokeOpacity="0.4" strokeDasharray="18 8" />
-            <g transform="translate(176 196)" fontFamily="Inter" fontSize="10" fill={a} stroke="none" letterSpacing="2">
-              <circle cx="16" cy="16" r="16" fill="none" stroke={a} strokeWidth="2" />
-              <path d="M34 16 h46" stroke={a} strokeWidth="2" />
-              <circle cx="96" cy="16" r="16" fill="none" stroke={a} strokeWidth="2" strokeOpacity="0.8" />
-              <path d="M112 8 l38 -22 M112 24 l38 22" stroke={a} strokeWidth="2" strokeOpacity="0.6" />
-              <circle cx="166" cy="-18" r="10" fill={a} fillOpacity="0.8" />
-              <circle cx="166" cy="50" r="10" fill="none" stroke={a} strokeWidth="2" strokeOpacity="0.5" />
-            </g>
+            <rect x="190" y="50" width="176" height="190" rx="12" strokeWidth="2" strokeOpacity="0.85" />
+            <line x1="208" x2="348" y1="214" y2="214" strokeWidth="2" strokeOpacity="0.5" />
+            {[
+              [214, 58],
+              [242, 92],
+              [270, 76],
+              [298, 122],
+              [326, 140],
+            ].map(([x, h], i) => (
+              <rect key={x} x={x} y={214 - h} width="18" height={h} rx="3" fill={a} fillOpacity={0.25 + i * 0.13} stroke="none" />
+            ))}
           </g>
         )}
         {project.motif === 'tenants' && (
@@ -98,7 +98,7 @@ export function SeriesMark({ className = '' }: { className?: string }) {
   return (
     <span className={`inline-flex items-center gap-1.5 ${className}`}>
       <svg viewBox="0 0 24 32" className="h-[1.1em] w-auto" aria-hidden>
-        <path d="M18 6c-1.8-1.8-4-2.6-6.5-2.6C7.6 3.4 5 5.6 5 9c0 7.6 14 4.6 14 11.6 0 3-2.8 5-6.4 5-3 0-5.4-1.2-7.2-3" fill="none" stroke="#e5132b" strokeWidth="4" strokeLinecap="round" />
+        <path d="M7 28V5h12M7 16h9" fill="none" stroke="#e5132b" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
       <span className="font-sans text-[0.62em] font-bold tracking-[0.36em] text-mist">SERIES</span>
     </span>

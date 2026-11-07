@@ -1,5 +1,5 @@
 /**
- * Central portfolio data — generated from Sushmita's resume (Sushmita_dasari.pdf).
+ * Central portfolio data — generated from the resume.
  * Every fact on the site comes from this file. Update it here and the whole site follows.
  * Nothing here should be added unless it appears on the resume.
  */
@@ -7,38 +7,43 @@
 export type Palette = { from: string; via: string; to: string; accent: string };
 
 export const profile = {
-  fullName: 'Dasari Venkata Ratna Sri Sushmita',
-  displayName: 'Sushmita Dasari',
-  firstName: 'SUSHMITA',
+  fullName: 'Faheem Ehsan Tanoli',
+  displayName: 'Faheem Ehsan Tanoli',
+  firstName: 'FAHEEM',
   seriesTag: 'THE SERIES',
   /** Fictional studio card shown at the very start of the opening sequence. */
-  originalLabel: 'A DASARI ORIGINAL',
+  originalLabel: 'A TANOLI ORIGINAL',
   role: 'Full-Stack Developer',
-  tagline: ['Full-Stack Developer', 'AI / ML', 'Java'],
+  tagline: ['Full-Stack Developer', 'CS / AI', 'PHP Frameworks'],
   intro:
-    'A B.Tech Artificial Intelligence & Machine Learning student (CGPA 9.10) and full-stack developer building AI-powered platforms, payment systems and multi-tenant SaaS with Java, Python, React, Node.js and Docker.',
-  location: 'Surampalem, Andhra Pradesh',
-  email: 'sushmitadasari17@gmail.com',
+    'A full-stack web developer with a BS in Computer Science from the University of Haripur, working with AI prompts and AI automations and building systems with PHP, JavaScript, Angular, React and SQL databases.',
+  aboutFacts: [
+    { k: 'Education', v: 'BS Computer Science', s: 'University of Haripur' },
+    { k: 'Role', v: 'Full-Stack Web Developer', s: 'PHP, JavaScript, Angular, React' },
+    { k: 'AI', v: 'AI Prompts', s: 'and AI Automations' },
+    { k: 'Building', v: 'Systems', s: 'with SQL, PostgreSQL and MongoDB' },
+  ],
+  email: 'faheem.ehsan90@gmail.com',
   links: {
-    linkedin: 'https://www.linkedin.com/in/sushmita-dasari-227a40284/',
-    github: 'https://github.com/Sushmitadasari',
+    linkedin: 'https://www.linkedin.com/in/faheem-tanoli',
+    github: 'https://github.com/faheem-ehsan',
   },
-  resumePdf: '/assets/Sushmita_Dasari_Resume.pdf',
+  resumePdf: 'assets/Sushmita_Dasari_Resume.pdf',
   portrait: {
-    src: '/assets/portrait-720.webp',
-    srcSet: '/assets/portrait-420.webp 420w, /assets/portrait-720.webp 720w, /assets/portrait-1100.webp 1100w',
-    alt: 'Portrait of Sushmita Dasari',
+    src: 'assets/portrait-720.webp',
+    srcSet: 'assets/portrait-420.webp 420w, assets/portrait-720.webp 720w, assets/portrait-1100.webp 1100w',
+    alt: 'Portrait of Faheem Ehsan Tanoli',
   },
-  interests: ['System Design', 'Cloud Computing (AWS)', 'Machine Learning'],
+  skills: ['PHP', 'JavaScript', 'HTML', 'CSS', 'Angular', 'React', 'SQL', 'PostgreSQL', 'MongoDB'],
 };
 
 export const education = [
   {
-    school: 'Aditya Engineering College',
-    place: 'Surampalem',
-    degree: 'Bachelor of Technology — Artificial Intelligence and Machine Learning',
+    school: 'University of Haripur',
+    place: 'Haripur',
+    degree: 'BS Computer Science AI Expert',
     period: 'October 2023 – Present',
-    score: 'CGPA 9.10',
+    score: 'CGPA 2.9',
   },
   {
     school: 'Sri Chaitanya Junior College',
@@ -65,107 +70,131 @@ export const experience = [
 
 export type Metric = { value: string; label: string };
 
+export type Screenshot = { src: string; alt: string; title: string; caption: string };
+
 export type Project = {
   id: string;
   title: string;
-  year: string;
+  /** Omit when unknown — the year badge is hidden. */
+  year?: string;
   genre: string;
   logline: string;
   stack: string[];
   build: string[];
   features: string[];
   metrics: Metric[];
+  /** Shown as a captioned gallery in the project overlay. */
+  screenshots?: Screenshot[];
   /** Omit when the repository isn't public — the GitHub button is hidden instead of linking to a 404. */
   github?: string;
   palette: Palette;
-  motif: 'shield' | 'flow' | 'tenants';
+  motif: 'shield' | 'chart' | 'tenants';
 };
 
 export const projects: Project[] = [
   {
-    id: 'policyguard-ai',
-    title: 'PolicyGuard AI',
-    year: '2026',
-    genre: 'AI • NLP • LLM',
-    logline: 'An AI-powered policy analysis platform across web, browser extension, mobile and desktop applications.',
-    stack: ['Python', 'NLP', 'LLM', 'REST API'],
-    build: [
-      'Built an AI-powered policy analysis platform across web, browser extension, mobile, and desktop applications, processing 500+ policy documents with 92% accuracy and reducing manual review time by 60% across 8 policy categories.',
-      'Engineered LLM-based Q&A, key-information extraction, and REST API integration for 10+ document types, enabling real-time policy insights and reducing decision turnaround time by 45%.',
-    ],
+    id: 'stock-ageing-dashboard',
+    title: 'Stock Ageing Dashboard',
+    genre: 'Inventory • Dashboard',
+    logline: 'A finished goods stock ageing dashboard for Qarshi, with division-based stock, batch, grading and expiry control.',
+    stack: [],
+    build: [],
     features: [
-      'LLM-based Q&A over policy documents',
-      'Key-information extraction',
-      'REST API integration for 10+ document types',
-      'Web, browser extension, mobile & desktop apps',
-      'Real-time policy insights',
+      'Login by division, email and password',
+      'View all divisions or filter by one division',
+      'Total batches and stock retail value at a glance',
+      'Latest stock update date',
+      'Grade summary for A+, A, B, C and Expired stock',
+      'Units, quantity and stock retail value for each grade',
+      'Grades based on division-specific shelf life used',
+      'Grade details with total quantity, batches and retail value',
+      'Finish Goods Aging, Daily Stock Reports, Market Returns and Administration modules',
     ],
-    metrics: [
-      { value: '500+', label: 'policy documents processed' },
-      { value: '92%', label: 'accuracy' },
-      { value: '60%', label: 'less manual review time' },
-      { value: '45%', label: 'faster decision turnaround' },
-      { value: '8', label: 'policy categories' },
+    metrics: [],
+    screenshots: [
+      {
+        src: 'assets/projects/stock-dashboard-main.webp',
+        alt: 'Finish Goods Stock Aging Dashboard showing total batches, stock retail value and a grade summary for A+, A, B, C and Expired stock',
+        title: 'Main dashboard',
+        caption: 'Shows total batches, stock retail value and the latest stock update, for all divisions or a single division. The grade summary breaks stock into A+, A, B, C and Expired, with units, quantity and retail value for each.',
+      },
+      {
+        src: 'assets/projects/stock-dashboard-grade.webp',
+        alt: 'A Grade popup showing total quantity, total number of batches and total stock retail value',
+        title: 'Grade details',
+        caption: 'Opening a grade shows its total quantity, number of batches and stock retail value, with a link through to the detailed batches.',
+      },
+      {
+        src: 'assets/projects/stock-dashboard-login.webp',
+        alt: 'Stock Aging Dashboard login page with division, email and password fields',
+        title: 'Division login',
+        caption: 'Users sign in by choosing their division and entering their email and password.',
+      },
     ],
-    // The resume links to https://github.com/Sushmitadasari/PolicyGuard-AI, which is not public yet (404).
-    // Add `github: 'https://github.com/Sushmitadasari/PolicyGuard-AI',` back once the repo is public.
-    palette: { from: '#2a0610', via: '#7a0f24', to: '#0b0710', accent: '#ff3d5a' },
-    motif: 'shield',
-  },
-  {
-    id: 'payment-gateway',
-    title: 'Payment Gateway System',
-    year: '2026',
-    genre: 'Full-Stack • Fintech • Microservices',
-    logline: 'A full-stack UPI & card payment gateway built around a strict payment state machine.',
-    stack: ['Node.js', 'Express', 'PostgreSQL', 'React', 'Docker'],
-    build: [
-      'Built full-stack UPI & card payment gateway processing 1,000+ transactions at 99.8% uptime with a strict payment state machine (processing → success/failed).',
-      'Dockerized microservice architecture cut deployment setup by 70%; backend optimizations reduced API response time by 40% and tripled throughput under load.',
-    ],
-    features: [
-      'UPI & card payments',
-      'Strict payment state machine (processing → success / failed)',
-      'Dockerized microservice architecture',
-      'Backend optimizations for load',
-    ],
-    metrics: [
-      { value: '1,000+', label: 'transactions processed' },
-      { value: '99.8%', label: 'uptime' },
-      { value: '70%', label: 'less deployment setup' },
-      { value: '40%', label: 'faster API response' },
-      { value: '3×', label: 'throughput under load' },
-    ],
-    github: 'https://github.com/Sushmitadasari/Payment-gateway-system-Project',
     palette: { from: '#1a0d02', via: '#8a4a07', to: '#0a0806', accent: '#ffb547' },
-    motif: 'flow',
+    motif: 'chart',
   },
   {
-    id: 'multi-tenant-saas',
-    title: 'Multi-Tenant SaaS Platform',
-    year: '2026',
-    genre: 'SaaS • Security • DevOps',
-    logline: 'Shared-database multi-tenancy with strict tenant isolation and 4-level JWT/RBAC.',
-    stack: ['Node.js', 'React', 'PostgreSQL', 'Docker Compose'],
-    build: [
-      'Architected shared-database multi-tenancy for 50+ concurrent tenants with strict tenant_id isolation and 4-level JWT/RBAC, achieving zero unauthorized-access incidents across 200+ users.',
-      'Implemented Docker Compose one-command deployment, reducing environment setup time from 45 minutes to under 2 minutes.',
-    ],
+    id: 'qr-code-plant-nursery',
+    title: 'QR Code and Plant Nursery',
+    genre: 'QR Code • Plant Nursery',
+    logline: 'A plant nursery system for Qarshi Botanical Garden & Nursery, with a QR code for every plant plus sales, purchase, supplier and stock management.',
+    stack: [],
+    build: [],
     features: [
-      'Shared-database multi-tenancy',
-      'Strict tenant_id isolation',
-      '4-level JWT / RBAC',
-      'One-command Docker Compose deployment',
+      'Dashboard with plant records, stock units, stock cost value and sales today',
+      'Sales chart for the last 6 months',
+      'Current stock chart for the top plants',
+      'Low stock alerts with SKU, quantity and reorder level',
+      'An identification QR code for every general plant',
+      'Separate QR codes for nursery plants',
+      'Import plants from CSV or Excel',
+      'Download QR codes one at a time or all at once',
+      'Print QR labels',
+      'QR page for each plant with photo, price, stock and health status',
+      'Sales, Purchase, Supplier, Stock and Users modules',
     ],
-    metrics: [
-      { value: '50+', label: 'concurrent tenants' },
-      { value: '200+', label: 'users' },
-      { value: '0', label: 'unauthorized-access incidents' },
-      { value: '45m → <2m', label: 'environment setup time' },
+    metrics: [],
+    screenshots: [
+      {
+        src: 'assets/projects/qr-nursery-dashboard.webp',
+        alt: 'Plant QR Nursery dashboard with plant records, stock units, stock cost value, sales today, a sales chart and a top plants chart',
+        title: 'Dashboard',
+        caption: 'Shows plant records, stock units, stock cost value and sales today, with a 6-month sales chart, a top plants stock chart and low stock alerts.',
+      },
+      {
+        src: 'assets/projects/qr-nursery-general.webp',
+        alt: 'General Plant QR Codes table listing each plant with its QR code, English name, botanical name and family',
+        title: 'General Plant QR Codes',
+        caption: 'Each plant gets its own identification QR code, listed with its English name, botanical name and family. Plants can be added by hand or imported from CSV or Excel.',
+      },
+      {
+        src: 'assets/projects/qr-nursery-codes.webp',
+        alt: 'Nursery Plants and QR Codes table with SKU, pot number, nursery block, health, price, stock and location',
+        title: 'Nursery Plants & QR Codes',
+        caption: 'Nursery stock has its own QR codes, tracked by SKU, pot number, nursery block, health, price, stock and location, with options to download codes and print labels.',
+      },
+      {
+        src: 'assets/projects/qr-nursery-plant-page.webp',
+        alt: 'QR page for a Blood Orange plant with a photo, price, SKU, pot details, location, health status and available stock',
+        title: 'Plant QR page',
+        caption: 'Each nursery plant has a QR page with its photo, botanical name, price, SKU, pot details, nursery block, location, health status, available stock and description.',
+      },
     ],
-    github: 'https://github.com/Sushmitadasari/Multi-Tenant-SaaS-Platform',
-    palette: { from: '#04121f', via: '#0f4c6e', to: '#05080d', accent: '#4cc9ff' },
+    palette: { from: '#03150f', via: '#0d5a40', to: '#050a08', accent: '#46e3a8' },
     motif: 'tenants',
+  },
+  {
+    id: 'plants-treatment-system',
+    title: 'Plants Treatment System',
+    genre: 'Treatment System',
+    logline: 'A system for managing plant treatments.',
+    stack: [],
+    build: [],
+    features: [],
+    metrics: [],
+    palette: { from: '#04121f', via: '#0f4c6e', to: '#05080d', accent: '#4cc9ff' },
+    motif: 'shield',
   },
 ];
 
@@ -180,11 +209,11 @@ export type Achievement = {
 
 export const achievements: Achievement[] = [
   {
-    id: 'algouniversity',
-    title: 'Tech Fellow',
-    org: 'AlgoUniversity',
-    detail: 'Selected through competitive national selection — advanced DSA, algorithm optimization, and competitive coding.',
-    laurel: 'National Selection',
+    id: 'uoh',
+    title: 'UOH',
+    org: 'University of Haripur',
+    detail: 'BS Computer Science AI Expert.',
+    laurel: 'UOH',
   },
   {
     id: 'flipkart-grid',
@@ -196,10 +225,10 @@ export const achievements: Achievement[] = [
   },
   {
     id: 'branch-topper',
-    title: 'AIML Branch Topper',
-    org: 'B.Tech AI & ML',
-    detail: '9.24 SGPA for the semester.',
-    laurel: 'Branch Topper',
+    title: 'CGPA 2.9',
+    org: 'BS Computer Science AI Expert',
+    detail: 'University of Haripur.',
+    laurel: 'CGPA 2.9',
   },
   {
     id: 'competitive-coding',
@@ -245,9 +274,9 @@ export const skillCategories: SkillCategory[] = [
   {
     id: 'languages',
     title: 'Languages',
-    subtitle: 'Java is the primary language',
+    subtitle: 'PHP Frameworks come first',
     skills: [
-      { name: 'Java', mono: 'Jv', note: 'Primary' },
+      { name: 'PHP Frameworks', mono: 'Ph', note: 'Primary' },
       { name: 'Python', mono: 'Py' },
       { name: 'C', mono: 'C' },
       { name: 'C++', mono: 'C+' },
@@ -328,27 +357,17 @@ export const skillCategories: SkillCategory[] = [
  * where the skill appears in the projects, certifications or achievements on the resume.
  */
 export const skillEvidence: Record<string, string[]> = {
-  Java: ['Oracle Java Certified Foundations Associate', 'HackerRank 5-star'],
-  Python: ['PolicyGuard AI', 'Cisco Python Essentials 1', 'HackerRank 5-star'],
+  Python: ['Cisco Python Essentials 1', 'HackerRank 5-star'],
   C: ['HackerRank 5-star'],
-  React: ['Payment Gateway System', 'Multi-Tenant SaaS Platform'],
   HTML: ['Pearson IT Specialist – HTML and CSS', 'Cisco HTML Essentials'],
   CSS: ['Pearson IT Specialist – HTML and CSS', 'Cisco CSS Essentials'],
   JavaScript: ['Cisco JavaScript Essentials 1 & 2'],
-  'Node.js': ['Payment Gateway System', 'Multi-Tenant SaaS Platform'],
-  'Express.js': ['Payment Gateway System'],
-  Docker: ['Payment Gateway System'],
-  'Docker Compose': ['Multi-Tenant SaaS Platform'],
-  'REST APIs': ['PolicyGuard AI'],
-  Microservices: ['Payment Gateway System'],
-  'JWT Auth': ['Multi-Tenant SaaS Platform'],
   'Git / GitHub': ['GitHub Foundations'],
-  PostgreSQL: ['Payment Gateway System', 'Multi-Tenant SaaS Platform'],
   MongoDB: ['MongoDB Certified Associate Developer'],
   DBMS: ['NPTEL Database Management System', 'Oracle Database Foundations'],
-  DSA: ['AlgoUniversity Tech Fellow', '850+ problems solved'],
+  DSA: ['UOH', '850+ problems solved'],
   'Cloud Computing (AWS)': ['AWS Certified AI Practitioner', 'AWS Academy Cloud Foundations'],
-  'Machine Learning': ['B.Tech AI & ML', 'NPTEL Deep Learning'],
+  'Machine Learning': ['BS Computer Science AI Expert', 'NPTEL Deep Learning'],
 };
 
 export type Episode = {
@@ -393,24 +412,24 @@ export const seasons: Season[] = [
   },
   {
     number: 2,
-    title: 'Enter: AI & ML',
+    title: 'Enter: Computer Science',
     period: '2023 – Present',
-    synopsis: 'B.Tech in Artificial Intelligence and Machine Learning at Aditya Engineering College, Surampalem.',
+    synopsis: 'BS Computer Science AI Expert at the University of Haripur.',
     episodes: [
       {
         code: 'S02 E01',
         title: 'The Engineer',
-        description: 'Bachelor of Technology in Artificial Intelligence and Machine Learning — CGPA 9.10.',
-        tags: ['B.Tech', 'AI & ML', 'CGPA 9.10'],
+        description: 'BS Computer Science AI Expert — CGPA 2.9.',
+        tags: ['BS Computer Science', 'AI Expert', 'CGPA 2.9'],
         runtime: 'Oct 2023 – Present',
         palette: violet,
       },
       {
         code: 'S02 E02',
-        title: 'The Topper',
-        description: 'AIML Branch Topper with a 9.24 SGPA for the semester.',
-        tags: ['9.24 SGPA', 'Branch Topper'],
-        runtime: 'One semester',
+        title: 'CGPA 2.9',
+        description: 'CGPA 2.9 in BS Computer Science at the University of Haripur.',
+        tags: ['CGPA 2.9'],
+        runtime: 'BS Computer Science',
         palette: crimson,
       },
       {
@@ -458,30 +477,38 @@ export const seasons: Season[] = [
   {
     number: 4,
     title: 'Building Real Products',
-    period: '2026',
-    synopsis: 'Three Originals — an AI platform, a payment gateway and a multi-tenant SaaS — plus national-level recognition.',
+    period: 'The Originals',
+    synopsis: 'Three Originals — Stock Ageing Dashboard, QR Code and Plant Nursery, and Plants Treatment System.',
     episodes: [
       {
         code: 'S04 E01',
-        title: 'The AI Builder',
-        description: 'PolicyGuard AI — LLM-based Q&A and key-information extraction across 500+ policy documents at 92% accuracy.',
-        tags: ['Python', 'NLP', 'LLM'],
-        runtime: '2026',
-        palette: crimson,
-      },
-      {
-        code: 'S04 E02',
-        title: 'The Architect',
-        description: 'Payment Gateway System and Multi-Tenant SaaS Platform — state machines, microservices, tenant isolation and RBAC.',
-        tags: ['Node.js', 'PostgreSQL', 'Docker'],
-        runtime: '2026',
+        title: 'Stock Ageing Dashboard',
+        description: 'A finished goods stock ageing dashboard for Qarshi, with division-based stock, batch, grading and expiry control.',
+        tags: ['Dashboard', 'Inventory', 'Qarshi'],
+        runtime: 'Original',
         palette: amber,
       },
       {
+        code: 'S04 E02',
+        title: 'QR Code and Plant Nursery',
+        description: 'A plant nursery system for Qarshi Botanical Garden & Nursery, with a QR code for every plant plus sales, purchase, supplier and stock management.',
+        tags: ['QR Code', 'Plant Nursery', 'Qarshi'],
+        runtime: 'Original',
+        palette: jade,
+      },
+      {
         code: 'S04 E03',
-        title: 'The Fellow',
-        description: 'Selected as a Tech Fellow at AlgoUniversity and reached the Semi-Finals of Flipkart GRiD 7.0.',
-        tags: ['AlgoUniversity', 'Flipkart GRiD 7.0'],
+        title: 'Plants Treatment System',
+        description: 'A system for managing plant treatments.',
+        tags: ['Plants', 'Treatment'],
+        runtime: 'Original',
+        palette: crimson,
+      },
+      {
+        code: 'S04 E04',
+        title: 'UOH',
+        description: 'University of Haripur. Semi-Finalist at Flipkart GRiD 7.0.',
+        tags: ['UOH', 'Flipkart GRiD 7.0'],
         runtime: 'National stage',
         palette: ocean,
       },
@@ -508,11 +535,11 @@ export const seasons: Season[] = [
 export type TopPick = { label: string; title: string; detail: string; palette: Palette };
 
 export const topPicks: TopPick[] = [
-  { label: 'Primary language', title: 'Java', detail: 'Listed as primary on the resume • Oracle certified', palette: amber },
-  { label: 'The AI Original', title: 'PolicyGuard AI', detail: '500+ documents • 92% accuracy', palette: crimson },
+  { label: 'Primary stack', title: 'PHP Frameworks', detail: 'with JavaScript, Angular and React', palette: amber },
+  { label: 'The Originals', title: 'Stock Ageing Dashboard', detail: 'QR Code and Plant Nursery • Plants Treatment System', palette: crimson },
   { label: 'Biggest stage', title: 'Flipkart GRiD 7.0', detail: 'Semi-Finalist', palette: ocean },
-  { label: 'National selection', title: 'AlgoUniversity', detail: 'Tech Fellow', palette: violet },
-  { label: 'Academic high', title: 'Branch Topper', detail: '9.24 SGPA in AI & ML', palette: jade },
+  { label: 'University', title: 'UOH', detail: 'University of Haripur', palette: violet },
+  { label: 'Academics', title: 'CGPA 2.9', detail: 'BS Computer Science', palette: jade },
   { label: 'Cloud credential', title: 'AWS AI Practitioner', detail: 'AWS Certified', palette: amber },
   { label: 'Problems solved', title: '850+', detail: 'LeetCode 350+ • GFG 300+ • CodeChef 200+', palette: crimson },
   { label: 'The training arc', title: '1 Year of FSD', detail: 'Technical Hub Pvt Ltd', palette: ocean },
@@ -526,15 +553,15 @@ export type IntroSlide = { kicker: string; title: string; lines: string[]; chips
 export const introSlides: IntroSlide[] = [
   {
     kicker: 'Education',
-    title: 'B.Tech · AI & ML',
-    lines: ['Aditya Engineering College, Surampalem', 'October 2023 – Present'],
-    chips: ['CGPA 9.10'],
+    title: 'BS Computer Science AI Expert',
+    lines: ['University of Haripur', 'October 2023 – Present'],
+    chips: ['CGPA 2.9'],
   },
   {
     kicker: 'Skills',
-    title: 'Java first.',
+    title: 'PHP Frameworks first.',
     lines: ['Python, C, C++ · React, Node.js, Express.js', 'PostgreSQL, MongoDB, MySQL · Docker, REST, JWT'],
-    chips: ['Java', 'Python', 'React', 'Node.js', 'Docker', 'PostgreSQL'],
+    chips: ['PHP Frameworks', 'Python', 'React', 'Node.js', 'Docker', 'PostgreSQL'],
   },
   {
     kicker: 'Training',
@@ -544,12 +571,12 @@ export const introSlides: IntroSlide[] = [
   {
     kicker: 'Projects',
     title: 'Three Originals',
-    lines: ['PolicyGuard AI — 500+ documents, 92% accuracy', 'Payment Gateway — 1,000+ transactions, 99.8% uptime', 'Multi-Tenant SaaS — 50+ tenants, zero unauthorized access'],
+    lines: ['Stock Ageing Dashboard', 'QR Code and Plant Nursery', 'Plants Treatment System'],
   },
   {
     kicker: 'Achievements',
     title: 'Top Moments',
-    lines: ['Tech Fellow — AlgoUniversity', 'Semi-Finalist — Flipkart GRiD 7.0', 'AIML Branch Topper — 9.24 SGPA'],
+    lines: ['UOH — University of Haripur', 'Semi-Finalist — Flipkart GRiD 7.0', 'CGPA 2.9'],
   },
   {
     kicker: 'Certified',
@@ -563,7 +590,7 @@ export const introSlides: IntroSlide[] = [
   },
 ];
 
-export type ProfileId = 'sushmita' | 'recruiter' | 'developer' | 'creative';
+export type ProfileId = 'faheem' | 'recruiter' | 'developer' | 'creative';
 export type SectionId = 'about' | 'journey' | 'originals' | 'picks' | 'skills' | 'moments' | 'story';
 
 export const viewerProfiles: {
@@ -574,8 +601,8 @@ export const viewerProfiles: {
   order: SectionId[];
 }[] = [
   {
-    id: 'sushmita',
-    name: 'Sushmita',
+    id: 'faheem',
+    name: 'Faheem',
     blurb: 'The full series, in order',
     color: '#e5132b',
     order: ['about', 'journey', 'originals', 'picks', 'skills', 'moments', 'story'],
@@ -604,9 +631,9 @@ export const viewerProfiles: {
 ];
 
 export const sectionMeta: Record<SectionId, { nav: string; card: string; meta: string; palette: Palette }> = {
-  about: { nav: 'About', card: 'About Me', meta: 'The Pilot • Education & training', palette: violet },
+  about: { nav: 'About', card: 'About Me', meta: 'The Pilot • Education & skills', palette: violet },
   journey: { nav: 'Journey', card: 'My Journey', meta: `${seasons.length} Seasons • ${seasons.reduce((n, s) => n + s.episodes.length, 0)} Episodes`, palette: amber },
-  originals: { nav: 'Originals', card: 'My Projects', meta: `${projects.length} Originals • 2026`, palette: crimson },
+  originals: { nav: 'Originals', card: 'My Projects', meta: `${projects.length} Originals`, palette: crimson },
   picks: { nav: 'Top Picks', card: 'Top Picks', meta: 'Top 10 from the resume', palette: jade },
   skills: { nav: 'Skills', card: 'My Skills', meta: `${skillCategories.length} Categories`, palette: ocean },
   moments: { nav: 'Moments', card: 'My Achievements', meta: `${achievements.length} Moments • ${certifications.length} Certifications`, palette: crimson },

@@ -1,0 +1,8 @@
+# XAMPP/Apache: serve the production build. The root index.html is Vite's source
+# entry and cannot run without Vite. Run `npm run build` to update dist/.
+DirectoryIndex index.html
+RewriteEngine On
+RewriteRule ^$ dist/index.html [L]
+RewriteRule ^index\.html$ dist/index.html [L]
+RewriteCond %{REQUEST_URI} !/dist/
+RewriteRule ^(.*)$ dist/$1 [L]
